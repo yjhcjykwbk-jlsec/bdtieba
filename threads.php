@@ -81,12 +81,13 @@
 
                             <div id="frs_list_pager" class="pager clearfix">
                             <?php
-                              $page=$PN-5>0?$PN-5:1;
+                              //$page=$PN-8>0?$PN-8:1;
+                              $page=1;
                               $i=0;      
-                              while($i<10 && $page<15){
+                              while($page<15){
                                 if($page==$PN){    
                                 ?>
-                                <span class="cur"><?php echo $PN;?></span>
+                                <span style="font:bold 14px arial" ><?php echo $PN;?></span>
                                 <?php }else{?>
                                 <a href="?mod=threads&pn=<?php echo $page;?>"><?php echo $page;?></a>
                                 <?php }
