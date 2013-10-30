@@ -145,6 +145,7 @@ width: 738px;
 background-color: #f5f5f5;
 }
 .j_thread_list{
+border-top: 1px dotted #dbdbdb;
 display: list-item;
 font-family: Arial;
 font-size: 12px;
