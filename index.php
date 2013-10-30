@@ -8,6 +8,9 @@ if(cmp($MOD,"threads")) {//帖子列表
 }else if(cmp($MOD,'posts')){//
   require "posts.php";
 }else {
-  echo "error request";
+  echo "error request!";
+  echo "<pre>usage example:\n"
+  ." ?mod=threads&pn=5&num=100\n"
+  ."or ?mod=posts&pn=2</pre>";
 }
 ?>

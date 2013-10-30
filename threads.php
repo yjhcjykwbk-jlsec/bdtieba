@@ -3,6 +3,7 @@
   $DB=new DB();
   $ACTION="getThreads";
   $PN=isset($_ENV['pn'])?$_ENV['pn']:1;
+  $NUM=isset($_ENV['num'])?$_ENV['num']:50;
   require "postmanager.php";
   ?>
 <html>
@@ -81,19 +82,21 @@
 
                             <div id="frs_list_pager" class="pager clearfix">
                             <?php
+                              $pnum=711;
                               //$page=$PN-8>0?$PN-8:1;
+                              $mnum=(int)($pnum/$NUM+1);
                               $page=1;
                               $i=0;      
-                              while($page<15){
+                              while($page<$mnum){
                                 if($page==$PN){    
                                 ?>
                                 <span style="font:bold 14px arial" ><?php echo $PN;?></span>
                                 <?php }else{?>
-                                <a href="?mod=threads&pn=<?php echo $page;?>"><?php echo $page;?></a>
+                                <a href="?mod=threads&pn=<?php echo $page;?>&num=<?php echo $NUM ?>"><?php echo $page;?></a>
                                 <?php }
                                 $page++;$i++;
                               }?>
-                              <a href="?mod=threads&pn=15" class="last">尾页</a>
+                              <a href="?mod=threads&pn=<?php echo $mnum?>&num=<?php echo $NUM ?>" class="last">尾页</a>
                             </div>
                         </div>
                     </div>
