@@ -169,7 +169,7 @@ def handleMainPage(doc,parameters):
       parameters['thread_id']=tid
       #handle with each thread 
       #you can kick this if you just want to crawl thread details
-      #handlePages('http://tieba.baidu.com/p/'+tid,1,getPager1,handlePostPage,parameters)
+      handlePages('http://tieba.baidu.com/p/'+tid,1,getPager1,handlePostPage,parameters)
 
 #handle with the posts page
 def handlePostPage(doc,parameters):
