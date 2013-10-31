@@ -3,7 +3,7 @@
   $DB=new DB();
   $ACTION="getThreads";
   $PN=isset($_ENV['pn'])?$_ENV['pn']:1;
-  $NUM=isset($_ENV['num'])?$_ENV['num']:50;
+  $NUM=isset($_ENV['num'])?$_ENV['num']:100;
   require "postmanager.php";
   ?>
 <html>
