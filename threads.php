@@ -191,5 +191,4 @@
         </div>
     </div>
     <link rel="stylesheet" href="http://tb1.bdstatic.com/tb/static-common/style/ueditor_extend_83890c9f.css">
-</body>
-</html>
+    <?php require "footer.php";?>

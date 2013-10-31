@@ -137,12 +137,4 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-    <div id="bdimgshare_1382879177280" class="sr-bdimgshare-collection sr-bdimgshare-coll-1- sr-bdimgshare-coll-" style="position: absolute; left: 1028px; top: 24794px; display: none;"></div>
-</body>
-
-</html>
+    <?php require "footer.php"; ?>
