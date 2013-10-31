@@ -62,7 +62,6 @@ body, button, input, select, textarea, td, th {
 
 .left_section {
     width: 100%;
-    float: left;
     background: url(http://tb2.bdstatic.com/tb/static-pb/img/lzl/main_bg_right_675437ad.png) repeat-y;
     border: 1px solid #e0e0e0;
     -webkit-background-clip: border-box;
@@ -74,7 +73,8 @@ body, button, input, select, textarea, td, th {
     background-origin: padding-box;
     background-size: auto;
     display: block;
-    float: left;
+    margin-left: 0px;
+    margin-right: 0px;
     font-family: Arial;
     font-size: 12px;
     font-style: normal;

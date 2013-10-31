@@ -77,14 +77,12 @@ line-height: 18px;
 width: 980px;
 word-break: break-all;
 zoom: 1;
-margin-left:80px;
 }
 .contet_wrap{
 border-top-color: rgb(204, 204, 204);
 border-top-style: solid;
 border-top-width: 1px;
 display: block;
-float: left;
 font-family: Arial;
 font-size: 12px;
 font-style: normal;
@@ -102,9 +100,8 @@ word-break: break-all;
 .content_leftList{
 border-top-color: rgb(204, 204, 204);
 border-top-style: solid;
-border-top-width: 1px;
+border-right: 1px dotted rgb(204,204,204);
 display: block;
-float: left;
 font-family: Arial;
 font-size: 12px;
 font-style: normal;
@@ -115,7 +112,6 @@ overflow-x: hidden;
 overflow-y: hidden;
 padding-bottom: 0px;
 padding-left: 1px;
-padding-right: 1px;
 padding-top: 0px;
 width: 738px;
 word-break: break-all;
