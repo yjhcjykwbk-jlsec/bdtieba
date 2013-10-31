@@ -11,6 +11,7 @@
     }else return;
 ?>
 <html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <head>
     <meta charset="utf-8">
     <title>posts</title>
@@ -49,7 +50,6 @@
         }
     </style>
 </head>
-
 <body class="skin_1" spellcheck="false">
     <div class="wrap1">
         <div class="wrap2">
@@ -134,7 +134,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+              <iframe class="left-section" src="http://tieba.baidu.com/p/<?php echo $TID;?>" 
+                  style="width:980px;height:700px;background:#808080;"
+              ></iframe>
+              </div>
+          </div>
     </div>
     <?php require "footer.php"; ?>
