@@ -135,7 +135,7 @@
                     </div>
                 </div>
               <iframe class="left-section" src="http://tieba.baidu.com/p/<?php echo $TID;?>" 
-                  style="width:980px;height:700px;background:#808080;"
+                  style="width:980px;height:900px;background:#808080;"
               ></iframe>
               </div>
           </div>
