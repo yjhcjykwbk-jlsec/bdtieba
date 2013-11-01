@@ -1,8 +1,9 @@
 <?php
 /////datatype
+include_once "portal.php";
 class DB{
     var $Host="127.0.0.1:3306";
-    var $Database="tieba";
+    var $Database="";
     var $User="root";
     var $Pwd="";
     var $Link_ID=0;//
@@ -10,6 +11,8 @@ class DB{
     var $Fields_Array;//缓存返回集合的各列名字
     var $Rows_Array;//缓存返回集合的各行
     function connect($Database="",$Host="",$User="",$Pwd=""){
+        global $DBNAME;
+        $this->Database=$DBNAME;
         if($Database=="") $Database=$this->Database;
         if($Host=="") $Host=$this->Host;
         if($User=="") $User=$this->User;

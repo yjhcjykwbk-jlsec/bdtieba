@@ -15,7 +15,7 @@
                       <div class="threadlist_li_right j_threadlist_li_right">
                           <div class="threadlist_lz clearfix">
                               <div class="threadlist_text threadlist_title j_th_tit  notStarList ">
-                                  <a href="?mod=posts&tid=<?php echo $THREAD['tid'];?>" title="<?php echo $THREAD['title'];?>"  class="j_th_tit">
+                                  <a href="?kword=<?php echo $DBNAME;?>&mod=posts&tid=<?php echo $THREAD['tid'];?>" title="<?php echo $THREAD['title'];?>"  class="j_th_tit">
                                     <?php if($THREAD['jinpinname']!=''){?> <span><img src="http://tb1.bdstatic.com/tb/static-frs/img/icon_bright/jing.gif"></span><?php }?><?php echo $THREAD['title'];?></a>
                               </div>
                               <!-- 加星 -->
@@ -55,11 +55,11 @@
                   ?>
                   <span style="font:bold 14px arial" ><?php echo $PN;?></span>
                   <?php }else{?>
-                  <a href="?mod=threads&pn=<?php echo $page;?>&num=<?php echo $NUM ?><?php if(isset($CID)) echo "&cid=".$CID;?>"><?php echo $page;?></a>
+                  <a href="?kword=<?php echo $DBNAME;?>&mod=threads&pn=<?php echo $page;?>&num=<?php echo $NUM ?><?php if(isset($CID)) echo "&cid=".$CID;?>"><?php echo $page;?></a>
                   <?php }
                   $page++;$i++;
                 }?>
-                <a href="?mod=threads&pn=<?php echo $mnum?>&num=<?php echo $NUM ?><?php if(isset($CID)) echo "&cid=".$CID;?>" class="last">尾页</a>
+                <a href="?kword=<?php echo $DBNAME;?>&mod=threads&pn=<?php echo $mnum?>&num=<?php echo $NUM ?><?php if(isset($CID)) echo "&cid=".$CID;?>" class="last">尾页</a>
               </div>
           </div>
       </div>

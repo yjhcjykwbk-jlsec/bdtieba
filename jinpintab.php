@@ -3,7 +3,7 @@
     <?php
         foreach($JINPINLIST as $i=>$JINPIN){
         ?>
-          <span><a href="?pn=1&cid=<?php echo $i+1;?>"><?php echo c($JINPIN['jinpinname']); ?></a></span>
+          <span><a href="?kword=<?php echo $DBNAME;?>&pn=1&cid=<?php echo $i+1;?>"><?php echo c($JINPIN['jinpinname']); ?></a></span>
     <?php } ?>
     </div>
 </div>

@@ -55,7 +55,7 @@
                             </li>
                         </ul>
                         <div class="l_thread_manage">
-                            <div class="d_del_thread"><a class="j_thread_delete" href="?mod=threads&pn=<?php echo (int)($THREAD['seqnum']/$NUM+1);?>">返回</a></div>
+                            <div class="d_del_thread"><a class="j_thread_delete" href="?kword=<?php echo $DBNAME;?>&mod=threads&pn=<?php echo (int)($THREAD['seqnum']/$NUM+1);?>">返回</a></div>
                             <div class="d_del_thread"><a class="j_thread_delete" href="#">删除主题</a>
                             </div>
                             <div id="d_post_manage" style="display: none;">
@@ -109,12 +109,12 @@
                               while($page<$num){
                                 if($page!=$PN){
                               ?>
-                              <a href="?mod=posts&tid=<?php echo $TID;?>&pn=<?php echo $page;?>"><?php echo $page;?></a>
+                              <a href="?kword=<?php echo $DBNAME;?>&mod=posts&tid=<?php echo $TID;?>&pn=<?php echo $page;?>"><?php echo $page;?></a>
                               <?php }else{ ?>
                               <span class="tP"><?php echo $PN;?></span> 
                               <?php }$page++;
                               }?>
-                              <a href="?mod=posts&tid=<?php echo $TID;?>&pn=<?php echo $num;?>">尾页</a>
+                              <a href="?kword=<?php echo $DBNAME;?>&mod=posts&tid=<?php echo $TID;?>&pn=<?php echo $num;?>">尾页</a>
                             </li>
                             <li class="l_reply_num" style="margin-left:2px; margin-right:10px">共有<span class="red"><?php echo $num;?></span>页</li>
                             <li class="l_reply_num">跳到 <input theme="3" id="jumpPage3" max-page="<?php echo $num;?>" type="text" style="width:30px;height:14px;"> 

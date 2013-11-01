@@ -57,6 +57,9 @@ class Tieba:
     sql="update thread_details set jinpinname='%s' where tid=%s and timestamp=timestamp"%(jinpin_name,thread_id)
     myexec1(sql)
   def initJinpin(self,i,jinpin_name):
+    sql="insert into jinpin(jinpinname,id) values('%s',%s)"%(jinpin_name,i)
+    myexec1(sql)
+  def updateJinpin(self,i,jinpin_name):
     sql="update jinpin set jinpinname='%s' where id=%s"%(jinpin_name,i)
     myexec1(sql)
   def clear(self):
@@ -101,9 +104,11 @@ def myEncode(text):
     return ""
   return text
 
+
+dbname="NOI"
 #initialize global variables  
 # database
-db = sql.connect("127.0.0.1","root","","tieba" )
+db = sql.connect("127.0.0.1","root","",dbname)
 # prepare a cursor object using cursor() method
 cursor = db.cursor()
 tieba=Tieba()
@@ -257,15 +262,18 @@ def handleJinpinPage(doc,parameters):
       tieba.setJinpin(thread_id,jinpin_name)
      
 
+#test:
 #parameters['thread_id']='2072174673'
 #handlePages("http://tieba.baidu.com/p/2072174673",1,getPager1,handlePostPage,parameters)
+
 #use this to bake a tieba
-tieba_name='%CA%F1%C9%BD%BD%A3%BF%CD'
+#tieba_name='%CA%F1%C9%BD%BD%A3%BF%CD'
+tieba_name='NOI'
 #handle with jingpin
 handleJinpinPages('http://tieba.baidu.com/f/good?kw='+tieba_name)
 parameters={}
 #crawl the tieba posts and threads
-#handlePages("http://tieba.baidu.com/f?tp=0&kw="+tieba_name,1,getPager2,handleMainPage,parameters)
+handlePages("http://tieba.baidu.com/f?tp=0&kw="+tieba_name,1,getPager2,handleMainPage,parameters)
 
-    #post_content=sql.escape_string(str(post_content))
-  #print sql.escape_string(str)
+#post_content=sql.escape_string(str(post_content))
+#print sql.escape_string(str)
