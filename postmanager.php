@@ -4,7 +4,7 @@ if(!isset($DB)){
   return;
 }
 //增删改查
-if($ACTION=="getPosts"&&isset($PN)&&isset($TID)){
+if($MOD=="posts"&&isset($PN)&&isset($TID)){
   $num=($PN-1)*30;
   //获取帖子
   $sql="select * from posts,threads where ".
@@ -35,7 +35,9 @@ if($ACTION=="getPosts"&&isset($PN)&&isset($TID)){
 //  var_dump($POSTLIST,true);
 //  echo "</pre>";
   //选择主题，从start个开始
-}else if($ACTION=="getThreads"&&isset($PN)&&!isset($JINPIN)){
+}
+
+else if($MOD=="threads"&&isset($PN)&&!isset($CID)){
   $num=($PN-1)*$NUM;
   $THREADLIST=$DB->get("select * from thread_details order by timestamp desc".
       " limit ".$num.",$NUM");
@@ -44,15 +46,24 @@ if($ACTION=="getPosts"&&isset($PN)&&isset($TID)){
     $num=$DB->get("select count(*) as cnt from threads where tid=".$tmp['tid']);
     $THREADLIST[$i]['postnum']=$num['0']['cnt'];
   }
-}else if($ACTION=="getThreads"&&isset($PN)&&isset($JINPIN)){
+  $num=$DB->get("select count(*) as cnt from thread_details");
+  $THREADNUM=$num['0']['cnt'];
+}
+
+else if($MOD=="threads"&&isset($PN)&&isset($CID)){
   $num=($PN-1)*$NUM;
-  $THREADLIST=$DB->get("select * from thread_details where jinpin=".$JINPIN." order by timestamp desc".
+  $THREADLIST=$DB->get("select * from thread_details,jinpin where thread_details.jinpinname=jinpin.jinpinname".
+      " and jinpin.id=".$CID." order by timestamp desc".
       " limit ".$num.",$NUM");
+  $JINPINLIST=$DB->get("select * from jinpin where 1=1");
   //获取每个帖子的回复数量
   foreach($THREADLIST as $i=>$tmp){
     $num=$DB->get("select count(*) as cnt from threads where tid=".$tmp['tid']);
     $THREADLIST[$i]['postnum']=$num['0']['cnt'];
   }
+  $num=$DB->get("select count(*) as cnt from thread_details,jinpin where thread_details.jinpinname=jinpin.jinpinname".
+      " and jinpin.id=".$CID);
+  $THREADNUM=$num['0']['cnt'];
 } 
 ?>
 <?php

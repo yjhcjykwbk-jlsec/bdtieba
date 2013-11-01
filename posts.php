@@ -6,7 +6,6 @@
     else $PN=1;
     if(isset($_ENV['tid'])){
       $TID=$_ENV['tid'];
-      $ACTION="getPosts";
       require "postmanager.php";
     }else return;
 ?>

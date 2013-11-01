@@ -54,7 +54,9 @@ class Tieba:
     #print "insert into lzls(postid,spid,content,timestamp) values(%s,%s,'%s','%s')"%(post_id,spid,content[0:20],time)
     myexec1(sql)
   def setJinpin(self,thread_id,jinpin_name):
-    sql="update thread_details set jinpin='%s' where tid=%s"%(jinpin_name,thread_id)
+    sql="update thread_details set jinpinname='%s' where tid=%s and timestamp=timestamp"%(jinpin_name,thread_id)
+    myexec(sql)
+    sql="insert into jinpin(jinpinname) values('%s')"%(jinpin_name)
     myexec(sql)
   def clear(self):
     sql="delete from posts where 1=1"
