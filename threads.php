@@ -35,8 +35,21 @@
         .edui-editor-body.focus {
             border:1px solid #5c9dff
         }
+        #a_stars {
+        background: url("stars.png") no-repeat scroll -130px 0 transparent;
+          opacity:0.7;
+          cursor: pointer;
+          display: inline;
+          float: left;
+          height: 20px;
+          margin-left: 5px;
+          position: relative;
+          width: 125px;
+        }
     </style>
     <link href="tieba.css" rel="stylesheet" type="text/css">
+    <script src="jquery.js"></script>
+    <script src="tieba.js"></script>
 </head>
 
 <body class="skin_8" spellcheck="false">
@@ -61,6 +74,12 @@
                                         <div class="threadlist_lz clearfix">
                                             <div class="threadlist_text threadlist_title j_th_tit  notStarList ">
                                                 <a href="?mod=posts&tid=<?php echo $THREAD['tid'];?>" title="<?php echo $THREAD['title'];?>"  class="j_th_tit"><?php echo $THREAD['title'];?></a>
+                                            </div>
+                                            <div class="star_bg fl" id="star_div">
+                                            <div id="a_stars" class="<?php echo $THREAD['tid'];?>"style="background-position: <?php
+                                            $tmp=$THREAD['star'];echo (26*(round($tmp)-5));?>px center;"
+                                            ></div>
+                                            <em id="m"></em>
                                             </div>
                                         </div>
                                         <div class="j_threadlist_detail threadlist_detail clearfix">
@@ -190,5 +209,13 @@
             </div>
         </div>
     </div>
-    <link rel="stylesheet" href="http://tb1.bdstatic.com/tb/static-common/style/ueditor_extend_83890c9f.css">
+    <script>
+        $(function(){
+            astars=$('div#a_stars');
+            for(i=0;i<astars.length;i++){
+              astar=astars[i];
+              new stars($(astar), astar.className).unlock();
+            }
+        });
+    </script>
     <?php require "footer.php";?>
