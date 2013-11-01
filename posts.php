@@ -1,9 +1,6 @@
 <?php 
     require_once "db.php";
     $DB=new DB();
-    if(isset($_ENV['pn']))
-      $PN=$_ENV['pn'];
-    else $PN=1;
     if(isset($_ENV['tid'])){
       $TID=$_ENV['tid'];
       require "postmanager.php";
@@ -25,12 +22,7 @@
         }
     </style>
     <link rel="shortcut icon" href="http://static.tieba.baidu.com/tb/favicon.ico">
-    <link rel="canonical" href="http://tieba.baidu.com/p/2665938259">
     <link rel="stylesheet" href="short.css">
-    <script>
-        PDC.mark("ht");
-        PDC.mark("vt");
-    </script>
     <style id="ueditor_body_css">
         .edui-editor-body .edui-body-container p {
             margin:5px 0;
@@ -63,7 +55,7 @@
                             </li>
                         </ul>
                         <div class="l_thread_manage">
-                            <div class="d_del_thread"><a class="j_thread_delete" href="?mod=threads&pn=<?php echo (int)($THREAD['seqnum']/50+1);?>">返回</a></div>
+                            <div class="d_del_thread"><a class="j_thread_delete" href="?mod=threads&pn=<?php echo (int)($THREAD['seqnum']/$NUM+1);?>">返回</a></div>
                             <div class="d_del_thread"><a class="j_thread_delete" href="#">删除主题</a>
                             </div>
                             <div id="d_post_manage" style="display: none;">
@@ -134,6 +126,7 @@
                       </div>
                   </div>
                 <?php 
+                  $IFRAMEWIDTH=920;
                   $IFRAMESRC="http://tieba.baidu.com/p/".$TID ;
                   require "iframe.php" ?>
               </div>

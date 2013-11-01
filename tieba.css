@@ -1,3 +1,9 @@
+html {
+width: 100%;
+height: 100%;
+border: 0;
+display: block;
+}
 .wrap1{
 -webkit-background-clip: border-box;
 -webkit-background-origin: padding-box;
@@ -15,7 +21,6 @@ font-style: normal;
 font-variant: normal;
 font-weight: normal;
 line-height: 18px;
-width: 1895px;
 word-break: break-all;
 }
 
@@ -36,7 +41,6 @@ font-style: normal;
 font-variant: normal;
 font-weight: normal;
 line-height: 18px;
-width: 1895px;
 word-break: break-all;
 zoom: 1;
 }
@@ -52,8 +56,6 @@ font-variant: normal;
 font-weight: normal;
 line-height: 18px;
 margin-bottom: 0px;
-margin-left: 457.5px;
-margin-right: 457px;
 margin-top: 0px;
 padding-bottom: 1px;
 padding-left: 0px;
@@ -341,8 +343,6 @@ font-weight: normal;
 height: 529px;
 line-height: 18px;
 margin-bottom: 0px;
-margin-left: 457.5px;
-margin-right: 457px;
 margin-top: 0px;
 padding-bottom: 25px;
 padding-left: 0px;

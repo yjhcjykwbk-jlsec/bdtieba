@@ -5,6 +5,8 @@ function c($a){return @iconv('GB2312','UTF-8',$a);}
 $_ENV=$_REQUEST;
 $MOD=isset($_ENV['mod'])?$_ENV['mod']:'threads';
 $PN=isset($_ENV['pn'])?$_ENV['pn']:1;
+//每页显示主题个数
+$NUM=isset($_ENV['num'])?$_ENV['num']:100;
 if(isset($_ENV['cid'])) $CID=$_ENV['cid'];
 //分发不同模块
 if(cmp($MOD,"threads")) {//帖子列表

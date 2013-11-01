@@ -1,7 +1,6 @@
 <?php
   require "db.php";
   $DB=new DB();
-  $NUM=isset($_ENV['num'])?$_ENV['num']:100;
   require "postmanager.php";
   ?>
 <html>
