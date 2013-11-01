@@ -1,16 +1,15 @@
 <?php
 function cmp($a,$b){return isset($a)&&isset($b)&&strcmp($a,$b)==0;}
-function c($a){return @iconv('GB2312','UTF-8',$a);}
+//重新包装http请求发到iframe
 $_ENV=$_REQUEST;
 $MOD=isset($_ENV['mod'])?$_ENV['mod']:'threads';
-if(cmp($MOD,"threads")) {//帖子列表
-  require "threads.php";
-}else if(cmp($MOD,'posts')){//
-  require "posts.php";
-}else {
-  echo "error request!";
-  echo "<pre>usage example:\n"
-  ." ?mod=threads&pn=5&num=100\n"
-  ."or ?mod=posts&pn=2</pre>";
+$PN=isset($_ENV['pn'])?$_ENV['pn']:1;
+if(isset($_ENV['cid'])) $CID=$_ENV['cid'];
+function url($name,$value){
+  if(isset($value)) return "&".$name."=".$value;
+  return "";
 }
+$IFRAMESRC="portal.php?".url("mod",$MOD).url("pn",$PN);
+if(isset($CID)) $IFRAMESRC.=url("cid",$CID);
+require "iframe.php";
 ?>

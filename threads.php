@@ -1,9 +1,7 @@
 <?php
   require "db.php";
   $DB=new DB();
-  $PN=isset($_ENV['pn'])?$_ENV['pn']:1;
   $NUM=isset($_ENV['num'])?$_ENV['num']:100;
-  if(isset($_ENV['cid'])) $CID=$_ENV['cid'];
   require "postmanager.php";
   ?>
 <html>
