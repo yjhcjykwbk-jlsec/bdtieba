@@ -55,9 +55,10 @@ class Tieba:
     myexec1(sql)
   def setJinpin(self,thread_id,jinpin_name):
     sql="update thread_details set jinpinname='%s' where tid=%s and timestamp=timestamp"%(jinpin_name,thread_id)
-    myexec(sql)
-    sql="insert into jinpin(jinpinname) values('%s')"%(jinpin_name)
-    myexec(sql)
+    myexec1(sql)
+  def initJinpin(self,i,jinpin_name):
+    sql="update jinpin set jinpinname='%s' where id=%s"%(jinpin_name,i)
+    myexec1(sql)
   def clear(self):
     sql="delete from posts where 1=1"
     myexec1(sql);
@@ -217,6 +218,7 @@ def handlePostPage(doc,parameters):
         lzl_time=pyq(lzl)('.lzl_time').text()
         tieba.insertLzl(post_id,spid,lzl_cnt,lzl_time)
         
+#处理精品帖子功能的入口
 def handleJinpinPages(url):
     print url
     doc=pyq(url)
@@ -224,13 +226,18 @@ def handleJinpinPages(url):
     print jinpin_list
     jinpins=pyq(jinpin_list)('span')
     for i,jinpin in enumerate(jinpins):
+        href=pyq(jinpin)('a').attr('href')
         jinpin=myEncode(pyq(jinpin).text())
+        print i
         print jinpin
-        if i!=0:
+        print href
+        if i!=0: #略过'全部'
+            tieba.initJinpin(i,jinpin)
             parameters={}
             parameters['text']=jinpin
-            handlePages(url+'&cid='+"%s"%i,1,getPager2,handleJinpinPage,parameters)
+            handlePages("http://tieba.baidu.com"+href,1,getPager2,handleJinpinPage,parameters)
 
+#解析精品帖子页面
 def handleJinpinPage(doc,parameters):
     print parameters
     jinpin_name=parameters['text']
@@ -239,12 +246,14 @@ def handleJinpinPage(doc,parameters):
       #上边 title href
       threadlist_text=pyq(threadlist_li)('.threadlist_title')
       j_th_tit=pyq(threadlist_text)('a')
+      title=myEncode(j_th_tit.text())
       href=pyq(j_th_tit).attr('href')
       if href[0]!='/':#not a thread, such as href='/p/xxx'
         continue
       thread_id=href.split('/')[2]
-      print "thread_id:"+thread_id
-      print jinpin_name
+      #print "thread_id:"+thread_id
+      print "thread_title:"+title
+      #print jinpin_name
       tieba.setJinpin(thread_id,jinpin_name)
      
 
@@ -252,8 +261,10 @@ def handleJinpinPage(doc,parameters):
 #handlePages("http://tieba.baidu.com/p/2072174673",1,getPager1,handlePostPage,parameters)
 #use this to bake a tieba
 tieba_name='%CA%F1%C9%BD%BD%A3%BF%CD'
+#handle with jingpin
 handleJinpinPages('http://tieba.baidu.com/f/good?kw='+tieba_name)
 parameters={}
+#crawl the tieba posts and threads
 #handlePages("http://tieba.baidu.com/f?tp=0&kw="+tieba_name,1,getPager2,handleMainPage,parameters)
 
     #post_content=sql.escape_string(str(post_content))
