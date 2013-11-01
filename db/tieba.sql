@@ -101,3 +101,5 @@ DROP TABLE IF EXISTS `temp`;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `temp` AS select `threads`.`tid` AS `tid`,max(`threads`.`timestamp`) AS `time` from `threads` group by `threads`.`tid`;
 
+--辅助对帖子进行排序
+create view threadseq as select * from thread_details order by timestamp asc;
