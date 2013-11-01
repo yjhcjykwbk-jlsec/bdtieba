@@ -1,6 +1,7 @@
 <?php
 function cmp($a,$b){return isset($a)&&isset($b)&&strcmp($a,$b)==0;}
 function c($a){return @iconv('GB2312','UTF-8',$a);}
+function p($a){print "<pre>";print_r($a);print "</pre>";}
 //解析http请求
 $_ENV=$_REQUEST;
 $MOD=isset($_ENV['mod'])?$_ENV['mod']:'threads';
