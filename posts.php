@@ -128,7 +128,8 @@
                 <?php 
                   $IFRAMEWIDTH=920;
                   $IFRAMESRC="http://tieba.baidu.com/p/".$TID ;
-                  require "iframe.php" ?>
+                  //you can change this to view the origin src page below
+                 // require "iframe.php" ?>
               </div>
           </div>
     </div>
