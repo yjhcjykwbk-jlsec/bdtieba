@@ -1,7 +1,7 @@
 <link href="header.css" rel="stylesheet" type="text/css">
 <div class="forum_header">
     <div class="card_top">
-        <div class="card_title "><a class="card_title_fname" href="/f?kw=%CA%F1%C9%BD%BD%A3%BF%CD">霜天晓角</a> 
+        <div class="card_title "><a class="card_title_fname" href="?pn=1">霜天晓角</a> 
             <a href="#" onclick="return false" class="focus_btn cancel_focus" id="j_head_focus_btn"></a><span class="card_num "> <span class="card_numLabel">关注：</span><span class="card_menNum">259</span>  <span class="card_numLabel">贴子：</span><span class="card_infoNum">7,165</span></span>
         </div>
         <p class="card_slogan">游星戏斗弄日月，醉卧云端笑人间</p>
