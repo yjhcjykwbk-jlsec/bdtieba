@@ -56,6 +56,7 @@
     <div class="wrap1">
         <div class="wrap2">
             <div id="container">
+                <?php require "forumheader.php"; ?>
                 <div class="frs_content clearfix">
                     <div class="contet_wrap" id="contet_wrap">
                         <div id="content_leftList" class="content_leftList clearfix">

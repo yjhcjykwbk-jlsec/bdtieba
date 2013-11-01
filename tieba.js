@@ -62,3 +62,6 @@ stars.prototype={
   }
 }
 
+function hideThreads(){
+    a=$('.thread_list').hidden();
+}

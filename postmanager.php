@@ -35,9 +35,18 @@ if($ACTION=="getPosts"&&isset($PN)&&isset($TID)){
 //  var_dump($POSTLIST,true);
 //  echo "</pre>";
   //选择主题，从start个开始
-}else if($ACTION=="getThreads"&&isset($PN)){
+}else if($ACTION=="getThreads"&&isset($PN)&&!isset($JINPIN)){
   $num=($PN-1)*$NUM;
   $THREADLIST=$DB->get("select * from thread_details order by timestamp desc".
+      " limit ".$num.",$NUM");
+  //获取每个帖子的回复数量
+  foreach($THREADLIST as $i=>$tmp){
+    $num=$DB->get("select count(*) as cnt from threads where tid=".$tmp['tid']);
+    $THREADLIST[$i]['postnum']=$num['0']['cnt'];
+  }
+}else if($ACTION=="getThreads"&&isset($PN)&&isset($JINPIN)){
+  $num=($PN-1)*$NUM;
+  $THREADLIST=$DB->get("select * from thread_details where jinpin=".$JINPIN." order by timestamp desc".
       " limit ".$num.",$NUM");
   //获取每个帖子的回复数量
   foreach($THREADLIST as $i=>$tmp){

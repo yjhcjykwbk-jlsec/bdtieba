@@ -53,6 +53,9 @@ class Tieba:
     sql="insert into lzls(postid,spid,content,timestamp) values(%s,%s,'%s','%s')"%(post_id,spid,content,time)
     #print "insert into lzls(postid,spid,content,timestamp) values(%s,%s,'%s','%s')"%(post_id,spid,content[0:20],time)
     myexec1(sql)
+  def setJinpin(self,thread_id,jinpin_name):
+    sql="update thread_details set jinpin='%s' where tid=%s"%(jinpin_name,thread_id)
+    myexec(sql)
   def clear(self):
     sql="delete from posts where 1=1"
     myexec1(sql);
@@ -146,7 +149,7 @@ def handlePages(url,page,getPager,func,parameters):
         print "handling next page:"+url;
         handlePages(url,page+1,getPager,func,parameters) #下一页
         break
-
+            
 #handle with the main page 
 def handleMainPage(doc,parameters):
     threadlist_lis=doc('.threadlist_li_right')
@@ -158,18 +161,18 @@ def handleMainPage(doc,parameters):
       href=pyq(j_th_tit).attr('href')
       if href[0]!='/':#not a thread, such as href='/p/xxx'
         continue
-      tid=href.split('/')[2]
+      thread_id=href.split('/')[2]
       #下边 摘要
       threadlist_abs=pyq(threadlist_li)('.threadlist_detail')('.threadlist_text').children().children()
       digest=myEncode(threadlist_abs.text())
       print "title:"+title
-      print "tid:"+tid
+      print "thread_id:"+thread_id
       print "digest:"+digest
-      tieba.insertThreadDetails(tid,title,digest)
-      parameters['thread_id']=tid
+      tieba.insertThreadDetails(thread_id,title,digest)
+      parameters['thread_id']=thread_id
       #handle with each thread 
       #you can kick this if you just want to crawl thread details
-      handlePages('http://tieba.baidu.com/p/'+tid,1,getPager1,handlePostPage,parameters)
+      handlePages('http://tieba.baidu.com/p/'+thread_id,1,getPager1,handlePostPage,parameters)
 
 #handle with the posts page
 def handlePostPage(doc,parameters):
@@ -212,14 +215,44 @@ def handlePostPage(doc,parameters):
         lzl_time=pyq(lzl)('.lzl_time').text()
         tieba.insertLzl(post_id,spid,lzl_cnt,lzl_time)
         
+def handleJinpinPages(url):
+    print url
+    doc=pyq(url)
+    jinpin_list=doc('.frs_good_nav_main_bright')
+    print jinpin_list
+    jinpins=pyq(jinpin_list)('span')
+    for i,jinpin in enumerate(jinpins):
+        jinpin=myEncode(pyq(jinpin).text())
+        print jinpin
+        if i!=0:
+            parameters={}
+            parameters['text']=jinpin
+            handlePages(url+'&cid='+"%s"%i,1,getPager2,handleJinpinPage,parameters)
+
+def handleJinpinPage(doc,parameters):
+    print parameters
+    jinpin_name=parameters['text']
+    threadlist_lis=doc('.threadlist_li_right')
+    for threadlist_li in threadlist_lis:
+      #上边 title href
+      threadlist_text=pyq(threadlist_li)('.threadlist_title')
+      j_th_tit=pyq(threadlist_text)('a')
+      href=pyq(j_th_tit).attr('href')
+      if href[0]!='/':#not a thread, such as href='/p/xxx'
+        continue
+      thread_id=href.split('/')[2]
+      print "thread_id:"+thread_id
+      print jinpin_name
+      tieba.setJinpin(thread_id,jinpin_name)
+     
 
 #parameters['thread_id']='2072174673'
 #handlePages("http://tieba.baidu.com/p/2072174673",1,getPager1,handlePostPage,parameters)
 #use this to bake a tieba
+tieba_name='%CA%F1%C9%BD%BD%A3%BF%CD'
+handleJinpinPages('http://tieba.baidu.com/f/good?kw='+tieba_name)
 parameters={}
-handlePages("http://tieba.baidu.com/f?kw=%CA%F1%C9%BD%BD%A3%BF%CD&tp=0",1,getPager2,handleMainPage,parameters)
-
-#myOpen("http://tieba.baidu.com/p/2198155679");
+#handlePages("http://tieba.baidu.com/f?tp=0&kw="+tieba_name,1,getPager2,handleMainPage,parameters)
 
     #post_content=sql.escape_string(str(post_content))
   #print sql.escape_string(str)

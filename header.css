@@ -1,0 +1,104 @@
+.nav_list .focus .tbnav_tab_inner {
+background-repeat: no-repeat;
+background-position: left -250px;
+}
+.nav_wrap, .nav_list .space, .nav_list .focus, .nav_list li:hover, .nav_list li:hover .tbnav_tab_inner, .nav_list .focus .tbnav_tab_inner {
+}
+p, div, td {
+word-break: break-all;
+}
+user agent stylesheetdiv {
+display: block;
+}
+li.focus.j_tbnav_tab
+.nav_list li {
+line-height: 46px;
+}
+ul.nav_list.j_nav_list
+.nav_list {
+font-family: STHeiti,"Microsoft Yahei",Arial;
+font-size: 16px;
+}
+.nav_list li {
+height: 46px;
+line-height: 46px;
+float: left;
+display: inline;
+margin-left: -2px;
+}
+.nav_list {
+display: block;
+float: left;
+font-size: 12px;
+font-style: normal;
+font-variant: normal;
+font-weight: normal;
+height: 46px;
+line-height: 18px;
+list-style-type: disc;
+margin-bottom: 0px;
+margin-left: 0px;
+margin-right: 0px;
+margin-top: 0px;
+overflow-x: hidden;
+overflow-y: hidden;
+padding-bottom: 0px;
+padding-left: 0px;
+padding-right: 0px;
+padding-top: 0px;
+width: 348px;
+}
+.nav_wrap {
+height: 46px;
+background-repeat: repeat-x;
+overflow: hidden;
+background: url(ftop.png) no-repeat;
+}
+.card_top {
+height: 81px;
+line-height: normal;
+position: relative;
+padding: 15px 0 0 100px;
+font-family: STHeiti,"Microsoft Yahei",Arial;
+background: url(ftop.png) no-repeat;
+}
+.card_title {
+margin: 5px 0 0 0;
+height: 40px;
+position: relative;
+}
+.card_slogan {
+color: #4c4c4c;
+font-size: 14px;
+}
+.card_head {
+padding: 2px;
+border: solid 1px rgba(0,0,0,0.1);
+background: #fff;
+position: absolute;
+left: 0;
+top: 0;
+margin: 15px;
+}
+.card_head, .card_head_img {
+width: 60px;
+height: 60px;
+display: block;
+overflow: hidden;
+}
+ul, ol {
+list-style: none;
+}
+.clearfix::after {
+content: ".";
+display: block;
+height: 0;
+clear: both;
+visibility: hidden;
+}
+.nav_list a.icon_tie {
+background-position: 20px -85px;
+}
+.nav_list a.nav_icon {
+padding-left: 43px;
+}
