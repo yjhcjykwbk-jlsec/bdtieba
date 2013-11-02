@@ -45,6 +45,6 @@
   }
 </style>
   <iframe class="iframe" src=<?php echo $IFRAMESRC;?>
-  style="width:<?php echo $IFRAMEWIDTH;?>px;height:900px;background:#808080;"
+  style="width:<?php echo $IFRAMEWIDTH;?>px;height:900px;background:#e0e0e0;"
 ></iframe>
 
