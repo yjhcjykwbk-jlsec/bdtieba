@@ -105,7 +105,8 @@ def myEncode(text):
   return text
 
 
-dbname="NOI"
+import sys
+dbname=sys.argv[1]
 #initialize global variables  
 # database
 db = sql.connect("127.0.0.1","root","",dbname)
@@ -268,12 +269,14 @@ def handleJinpinPage(doc,parameters):
 
 #use this to bake a tieba
 #tieba_name='%CA%F1%C9%BD%BD%A3%BF%CD'
-tieba_name='NOI'
+tieba_name=sys.argv[2]
 #handle with jingpin
 handleJinpinPages('http://tieba.baidu.com/f/good?kw='+tieba_name)
 parameters={}
 #crawl the tieba posts and threads
 handlePages("http://tieba.baidu.com/f?tp=0&kw="+tieba_name,1,getPager2,handleMainPage,parameters)
 
+
+#usage: python tieba.py dbname('mydb' for example) tiebaname('%CA%F1%C9%BD%BD%A3%BF%CD' for example)
 #post_content=sql.escape_string(str(post_content))
 #print sql.escape_string(str)
