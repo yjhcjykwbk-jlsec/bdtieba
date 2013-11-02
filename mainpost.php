@@ -1,5 +1,9 @@
 <table class="l_post" width="100%"><tr>
-<td class="d_author"></td>
+<td class="d_author">
+<div  style="height:80px;width:80px;padding:2px;border:2px solid #e0e0e0;margin-top:20px;margin-left:15px;">
+<img src="biguser.png" style="height:80px;width:80px;"/>
+</div>
+</td>
 <td class="d_post_content_main d_post_content_firstfloor ">
 <div class="p_content">
 <cc>
