@@ -1,6 +1,10 @@
 <?php require_once "postmanager.php"; ?>
     <table class="l_post" width="100%" ><tr>
-    <td class="d_author"></td>
+    <td class="d_author">
+      <div  style="height:80px;width:80px;padding:2px;border:2px solid #e0e0e0;margin-top:20px;margin-left:15px;">
+      <img src="biguser.png" style="height:80px;width:80px;"/>
+      </div>
+    </td>
     <td class="d_post_content_main">
         <div class="p_content">
             <cc>
@@ -30,9 +34,11 @@
                 <div class="j_lzl_c_b_a core_reply_content">
                     <ul class="j_lzl_m_w" style="display:">
                         <?php foreach($POST['lzl'] as $LZL){?>
-                        <li class="lzl_single_post j_lzl_s_p first_no_border" data-field="{&quot;pid&quot;:40704045971,&quot;spid&quot;:&quot;$spid&quot;,&quot;user_name&quot;:&quot;\u8700\u5c71\u65e0\u5f71\u5251&quot;,&quot;portrait&quot;:&quot;5c19caf1c9bdceded3b0bda3ac06&quot;}">
+                        <li class="lzl_single_post j_lzl_s_p first_no_border">
                             <a class="l_post_anchor" name="$spid"></a>
-                            <div class="j_user_card lzl_p_p" ></div>
+                            <div class="j_user_card lzl_p_p" >
+                              <img src="user.png" style="height:32px;width:32px;"/>
+                            </div>
                             <div class="lzl_cnt"> <span class="lzl_content_main">  
                             <span>&nbsp;&nbsp;</span><?php echo c($LZL['content']); ?>
                           </span> 
