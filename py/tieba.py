@@ -263,20 +263,22 @@ def handleJinpinPage(doc,parameters):
       tieba.setJinpin(thread_id,jinpin_name)
      
 
+
+
+###################################################
+
 #test:
 #parameters['thread_id']='2072174673'
 #handlePages("http://tieba.baidu.com/p/2072174673",1,getPager1,handlePostPage,parameters)
 
+print "usage: python tieba.py dbname(mydb for example) tiebaname('仙剑' for example)"
 #use this to bake a tieba
-#tieba_name='%CA%F1%C9%BD%BD%A3%BF%CD'
 tieba_name=sys.argv[2]
+#crawl the tieba posts and threads
 parameters={}
 handlePages("http://tieba.baidu.com/f?tp=0&kw="+tieba_name,1,getPager2,handleMainPage,parameters)
 #handle with jingpin
 handleJinpinPages('http://tieba.baidu.com/f/good?kw='+tieba_name)
-#crawl the tieba posts and threads
 
-
-#usage: python tieba.py dbname('mydb' for example) tiebaname('%CA%F1%C9%BD%BD%A3%BF%CD' for example)
 #post_content=sql.escape_string(str(post_content))
 #print sql.escape_string(str)
