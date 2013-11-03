@@ -139,6 +139,7 @@ def getNextPage(o_url,page):
   return url
 
 def handlePages(url,page,getPager,func,parameters):
+  print "handling page:"+url;
   #html=fp.read();#gbk 
   #html=myOpen(url)
   html=pyq(url);
@@ -155,7 +156,6 @@ def handlePages(url,page,getPager,func,parameters):
       href_text=pyq(page_num).text()
       if href_text=="%s"%(page+1):
         url="http://tieba.baidu.com"+pyq(page_num).attr('href')
-        print "handling next page:"+url;
         handlePages(url,page+1,getPager,func,parameters) #下一页
         break
             
@@ -271,7 +271,7 @@ def handleJinpinPage(doc,parameters):
 #parameters['thread_id']='2072174673'
 #handlePages("http://tieba.baidu.com/p/2072174673",1,getPager1,handlePostPage,parameters)
 
-print "usage: python tieba.py dbname(mydb for example) tiebaname('仙剑' for example)"
+print "usage: python tieba.py dbname(mydb for example) tiebaname('noi' for example)"
 #use this to bake a tieba
 tieba_name=sys.argv[2]
 #crawl the tieba posts and threads
