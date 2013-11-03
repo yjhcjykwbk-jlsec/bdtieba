@@ -36,7 +36,7 @@
                               <img src="user.png" style="height:32px;width:32px;"/>
                             </div>
                             <div class="lzl_cnt"> <span class="lzl_content_main">  
-                            <span>&nbsp;&nbsp;</span><?php echo c($LZL['content']); ?>
+                            <span>&nbsp;&nbsp;</span><?php echo htmlspecialchars(c($LZL['content'])); ?>
                           </span> 
                                 <div class="lzl_content_reply"><span class="lzl_jb"></span><span class="lzl_op_list j_lzl_o_l" style=""><a href="#" class="j_lzl_ban">封</a>&nbsp;|&nbsp;<a href="#" class="j_lzl_del">删除</a>&nbsp;|&nbsp;</span><span class="lzl_time"><?php echo $LZL['timestamp']; ?></span>
                                     <a href="#" class="lzl_s_r">回复</a>
