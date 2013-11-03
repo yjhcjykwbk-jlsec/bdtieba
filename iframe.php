@@ -35,8 +35,6 @@
   height: 755px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 30px;
-  padding-bottom: 32px;
   /*padding-left: 64px;
   padding-right: 64px;
   */
