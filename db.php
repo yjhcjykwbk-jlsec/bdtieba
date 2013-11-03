@@ -1,6 +1,5 @@
 <?php
 /////datatype
-include_once "portal.php";
 class DB{
     var $Host="127.0.0.1:3306";
     var $Database="";
