@@ -4,8 +4,8 @@
     if(isset($_ENV['tid'])){
       $TID=$_ENV['tid'];
       require "postmanager.php";
+      $TPN=isset($_ENV['tpn'])?$_ENV['tpn']:(int)(getThreadOrder($TID)/$NUM+1);
     }else return;
-    $TPN=isset($_ENV['tpn'])?$_ENV['tpn']:1;
 ?>
 <html>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

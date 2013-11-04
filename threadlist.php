@@ -16,7 +16,7 @@
                           <div class="threadlist_lz clearfix">
                               <div class="threadlist_text threadlist_title j_th_tit  notStarList ">
                       <!--$TPN is for threads page's pn-->
-                                  <a href="?kword=<?php echo $DBNAME;?>&mod=posts&tpn=<?php echo $PN; ?>&num=<?php echo $NUM;?>&tid=<?php echo $THREAD['tid'];?>" title="<?php echo $THREAD['title'];?>"  class="j_th_tit">
+                                  <a href="?kword=<?php echo $DBNAME;?>&mod=posts<?php if(!isset($_ENV['cid'])) echo "&tpn=".$PN; ?>&num=<?php echo $NUM;?>&tid=<?php echo $THREAD['tid'];?>" title="<?php echo $THREAD['title'];?>"  class="j_th_tit">
                                     <?php if($THREAD['jinpinname']!=''){?> <span><img src="http://tb1.bdstatic.com/tb/static-frs/img/icon_bright/jing.gif"></span><?php }?><?php echo $THREAD['title'];?></a>
                               </div>
                               <!-- 加星 -->
