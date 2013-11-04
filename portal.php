@@ -7,7 +7,7 @@ $_ENV=$_REQUEST;
 $MOD=isset($_ENV['mod'])?$_ENV['mod']:'threads';
 $PN=isset($_ENV['pn'])?$_ENV['pn']:1;
 //每页显示主题个数
-$NUM=isset($_ENV['num'])?$_ENV['num']:10;
+$NUM=isset($_ENV['num'])?$_ENV['num']:30;
 //贴吧名字
 $DBNAME=isset($_ENV['kword'])?$_ENV['kword']:'tieba';
 if(isset($_ENV['cid'])) $CID=$_ENV['cid'];
