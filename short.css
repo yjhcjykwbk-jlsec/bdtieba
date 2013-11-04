@@ -16,6 +16,9 @@ p, div, td {
 user agent stylesheetdiv {
     display: block;
 }
+span.edit_font_color {
+color: #e10602;
+}
 
 body.skin_1
 body, button, input, select, textarea, td, th {
