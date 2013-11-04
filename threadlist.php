@@ -51,7 +51,7 @@
                 $mnum=(int)($pnum/$NUM+1);
                 $page=1;
                 $i=0;      
-                while($page<$mnum){
+                while($page<=$mnum){
                   if($page==$PN){    
                   ?>
                   <span style="font:bold 14px arial" ><?php echo $PN;?></span>
