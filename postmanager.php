@@ -48,8 +48,7 @@ if($MOD=="posts"&&isset($PN)&&isset($TID)){
   //获取帖子楼中楼
   foreach($POSTLIST as $i =>$tmp){
     $sql="select * from lzls where postid=".$tmp['postid'];
-    $DB->query($sql);
-    $lzls=$DB->get_rows_array();
+    $lzls=$DB->get($sql);
     $POSTLIST[$i]['lzl']=$lzls;
   }
 //  echo "<pre>";
