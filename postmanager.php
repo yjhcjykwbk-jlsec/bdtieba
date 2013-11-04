@@ -33,12 +33,13 @@ if($MOD=="posts"&&isset($PN)&&isset($TID)){
   $THREAD['postnum']=count($POSTLIST);
 
   //获取主题时间排序序号
-  $sql="set @i=0";
-  $DB->query($sql);
-  $sql="select temp.order from (select @i:=@i+1 as `order`,tid from threadseq"  //threadseq是一个view
-    .") as temp where temp.tid=".$TID;
-  $tmp=$DB->get($sql);
-  $THREAD['seqnum']=$tmp['0']['order'];
+  //该部分被$TPN 替代
+  // $sql="set @i=0";
+  // $DB->query($sql);
+  // $sql="select temp.order from (select @i:=@i+1 as `order`,tid from threadseq"  //threadseq是一个view
+    // .") as temp where temp.tid=".$TID;
+  // $tmp=$DB->get($sql);
+  // $THREAD['seqnum']=$tmp['0']['order'];
 
   //获取帖子楼中楼
   foreach($POSTLIST as $i =>$tmp){

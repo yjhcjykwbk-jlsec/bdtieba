@@ -5,6 +5,7 @@
       $TID=$_ENV['tid'];
       require "postmanager.php";
     }else return;
+    $TPN=isset($_ENV['tpn'])?$_ENV['tpn']:1;
 ?>
 <html>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -55,7 +56,9 @@
                             </li>
                         </ul>
                         <div class="l_thread_manage">
-                            <div class="d_del_thread"><a class="j_thread_delete" href="?kword=<?php echo $DBNAME;?>&mod=threads&pn=<?php echo (int)($THREAD['seqnum']/$NUM+1);?>">返回</a></div>
+    <!-- (int)($THREAD['seqnum']/$NUM+1)-->
+    <!-- TPN is special for threads page pn -->
+                       <div class="d_del_thread"><a class="j_thread_delete" href="?kword=<?php echo $DBNAME;?>&mod=threads&pn=<?php echo $TPN;?>&num=<?php echo$NUM;?>">返回</a></div>
                             <div class="d_del_thread"><a class="j_thread_delete" href="#">删除主题</a>
                             </div>
                             <div id="d_post_manage" style="display: none;">
