@@ -33,7 +33,7 @@
                         <li class="lzl_single_post j_lzl_s_p first_no_border">
                             <a class="l_post_anchor" name="$spid"></a>
                             <div class="j_user_card lzl_p_p" >
-                              <img src="user<?php echo rand(0,15);?>.png" style="height:32px;width:32px;"/>
+                              <img src="user<?php echo rand(0,16);?>.jpg" style="height:32px;width:32px;"/>
                             </div>
                             <div class="lzl_cnt"> <span class="lzl_content_main">  
                             <span>&nbsp;&nbsp;</span><?php echo htmlspecialchars(c($LZL['content'])); ?>
