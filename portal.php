@@ -10,6 +10,7 @@ $PN=isset($_ENV['pn'])?$_ENV['pn']:1;
 $NUM=isset($_ENV['num'])?$_ENV['num']:30;
 //贴吧名字
 $DBNAME=isset($_ENV['kword'])?$_ENV['kword']:'tieba';
+$PHOTONUM=22;
 if(isset($_ENV['cid'])) $CID=$_ENV['cid'];
 //分发不同模块
 if(cmp($MOD,"threads")) {//帖子列表
