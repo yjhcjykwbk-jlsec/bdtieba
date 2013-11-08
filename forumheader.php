@@ -16,14 +16,14 @@
             <li class=" focus j_tbnav_tab ">
                 <div class="tbnav_tab_inner">
                     <p class="space">
-                        <a href="?kword=<?php echo $DBNAME;?>&pn=1" class="nav_icon icon_tie  j_tbnav_tab_a" id="tab_forumname" stats-data="fr=tb0_forum&amp;amp;st_mod=frs&amp;amp;st_value=tabmain">看贴</a>
+                    <a href="?kword=<?php echo $DBNAME;?>&pn=1&num=<?php echo $NUM;?>" class="nav_icon icon_tie  j_tbnav_tab_a" id="tab_forumname" stats-data="fr=tb0_forum&amp;amp;st_mod=frs&amp;amp;st_value=tabmain">看贴</a>
                     </p>
                 </div>
             </li>
             <li class=" j_tbnav_tab ">
                 <div class="tbnav_tab_inner">
                     <p class="space">
-                        <a href="?kword=<?php echo $DBNAME;?>&cid=1" class="nav_icon icon_jingpin  j_tbnav_tab_a" stats-data="fr=tb0_forum&amp;amp;st_mod=frs&amp;amp;st_value=tabgood">精品</a>
+                        <a href="?kword=<?php echo $DBNAME;?>&cid=1&num=<?php echo $NUM;?>" class="nav_icon icon_jingpin  j_tbnav_tab_a" stats-data="fr=tb0_forum&amp;amp;st_mod=frs&amp;amp;st_value=tabgood">精品</a>
                     </p>
                 </div>
             </li>
