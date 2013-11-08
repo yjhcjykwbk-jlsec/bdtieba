@@ -24,7 +24,12 @@ body.skin_1
 body, button, input, select, textarea, td, th {
     font: 12px/18px Arial,'宋体';
 }
-
+.wrap1 {
+    background-image: url(http://edu.i.gtimg.cn/qzone/space_item/orig/7/93191_top.jpg);
+    background-color:rgb(57,135,209);
+    background-position: center top;
+    background-repeat:no-repeat;
+}
 .wrap2 {
     display: block;
     font-family: Arial;
@@ -39,10 +44,6 @@ body, button, input, select, textarea, td, th {
 }
 
 .l_container {
-    width: 980px;
-}
-
-.container {
     display: block;
     font-family: Arial;
     font-size: 12px;
@@ -50,6 +51,8 @@ body, button, input, select, textarea, td, th {
     font-variant: normal;
     font-weight: normal;
     line-height: 18px;
+    margin-left:auto;
+    margin-right:auto;
     margin-bottom: 0px;
     margin-top: 0px;
     padding-bottom: 0px;
@@ -59,6 +62,7 @@ body, button, input, select, textarea, td, th {
     width: 980px;
     word-break: break-all;
     zoom: 1;
+    opacity:0.8;
 }
 
 .left_section {

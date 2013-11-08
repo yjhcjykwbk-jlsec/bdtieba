@@ -22,16 +22,16 @@ font-variant: normal;
 font-weight: normal;
 line-height: 18px;
 word-break: break-all;
+background-image: url(http://edu.i.gtimg.cn/qzone/space_item/orig/7/93191_top.jpg);
+background-color:rgb(57,135,209);
+background-position: center top;
+background-repeat:no-repeat;
 }
 
 .wrap2{
 -webkit-background-clip: border-box;
 -webkit-background-origin: padding-box;
 -webkit-background-size: auto;
-background-attachment: scroll;
-background-clip: border-box;
-background-color: rgba(0, 0, 0, 0);
-/*background-image: url(http://tb1.bdstatic.com/tb/cms/frs/bg/bg_999_wrap2.png?v=0216);*/
 background-origin: padding-box;
 background-size: auto;
 display: block;
@@ -45,7 +45,6 @@ word-break: break-all;
 zoom: 1;
 }
 #container{
-background-image: url(http://tb2.bdstatic.com/tb/static-frs/img/v2/n_bg_con.png?120217);
 background-position: 0px 100%;
 background-repeat: no-repeat;
 display: block;
@@ -55,6 +54,8 @@ font-style: normal;
 font-variant: normal;
 font-weight: normal;
 line-height: 18px;
+margin-left: auto;
+margin-right: auto;
 margin-bottom: 0px;
 margin-top: 0px;
 padding-bottom: 1px;
@@ -63,6 +64,7 @@ padding-right: 0px;
 padding-top: 0px;
 width: 980px;
 word-break: break-all;
+opacity:0.9;
 }
 .frs_content{
 background-image: url(http://tb2.bdstatic.com/tb/static-frs/img/v2/n_bg_con.png?120217);
@@ -342,6 +344,8 @@ font-variant: normal;
 font-weight: normal;
 height: 529px;
 line-height: 18px;
+margin-left: auto;
+margin-right: auto;
 margin-bottom: 0px;
 margin-top: 0px;
 padding-bottom: 25px;
