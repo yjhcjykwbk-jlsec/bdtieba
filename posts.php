@@ -23,7 +23,7 @@
         }
     </style>
     <link rel="shortcut icon" href="http://static.tieba.baidu.com/tb/favicon.ico">
-    <link rel="stylesheet" href="short.css">
+    <link rel="stylesheet" href="tieba.css">
     <style id="ueditor_body_css">
         .edui-editor-body .edui-body-container p {
             margin:5px 0;
