@@ -274,6 +274,7 @@ def handleJinpinPage(doc,parameters):
 print "usage: python tieba.py dbname(mydb for example) tiebaname('noi' for example)"
 #use this to bake a tieba
 tieba_name=sys.argv[2]
+handleJinpinPages('http://tieba.baidu.com/f/good?kw='+tieba_name)
 #crawl the tieba posts and threads
 parameters={}
 handlePages("http://tieba.baidu.com/f?tp=0&kw="+tieba_name,1,getPager2,handleMainPage,parameters)
