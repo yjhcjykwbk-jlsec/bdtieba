@@ -528,10 +528,11 @@ body, button, input, select, textarea, td, th {
   font: 12px/18px Arial,'宋体';
 }
 .wrap1 {
-  background-image: url(http://edu.i.gtimg.cn/qzone/space_item/orig/7/93191_top.jpg);
+  background-image: url(bg.png);
   background-color:rgb(57,135,209);
-  background-position: center top;
-  background-repeat:no-repeat;
+  background-repeat:repeat;
+  /*background-position: center top;
+   */
 }
 
 .left_section {
