@@ -4,7 +4,7 @@ class DB{
     var $Host="127.0.0.1:3306";
     var $Database="";
     var $User="root";
-    var $Pwd="";
+    var $Pwd="1234";
     var $Link_ID=0;//
     var $Query_ID=0;
     var $Fields_Array;//缓存返回集合的各列名字

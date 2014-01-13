@@ -109,7 +109,7 @@ import sys
 dbname=sys.argv[1]
 #initialize global variables  
 # database
-db = sql.connect("127.0.0.1","root","",dbname)
+db = sql.connect("127.0.0.1","root","1234",dbname)
 # prepare a cursor object using cursor() method
 cursor = db.cursor()
 tieba=Tieba()
