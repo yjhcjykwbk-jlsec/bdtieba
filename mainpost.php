@@ -12,8 +12,7 @@
 <div class="core_reply j_lzl_wrapper">
 <a class="l_post_anchor" name="40703980655l"></a>
 <div class="core_reply_tail">
-<ul class="p_reply">
-</ul>
+<!--ul class="p_reply"> </ul回复主题-->
 <ul class="p_tail">
 <li><span class="">1楼</span>
 </li>

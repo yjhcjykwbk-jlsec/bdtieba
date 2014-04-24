@@ -17,6 +17,6 @@ function r(){
   return $url;
 }
 $IFRAMESRC="portal.php?".r();
-$IFRAMEWIDTH=780;
+$IFRAMEWIDTH=900;
 require "iframe.php";
 ?>

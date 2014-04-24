@@ -1,5 +1,5 @@
     <style>
-      #scroll { clear:both; position:fixed; right:200px; bottom:360px; width:32px; height:76px; z-index:99; }
+      #scroll { clear:both; position:fixed; right:10px; bottom:360px; width:32px; height:76px; z-index:99; }
       #scroll a { background:url(scroll.png) no-repeat; float:left; display:inline; text-indent:-10000px; width:32px; height:38px; }
       #scroll a.back-to-top {background-position:left top;}
       #scroll a.back-to-top:hover{background-position:right top;}

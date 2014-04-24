@@ -43,7 +43,7 @@
   }
 </style>
   <iframe class="iframe" src=<?php echo $IFRAMESRC;?>
-  style="width:<?php echo $IFRAMEWIDTH;?>px;height:600px;background:#ffffff;"
+  style="width:80%;height:650px;background:#ffffff;"
 ></iframe>
 
 
