@@ -879,6 +879,9 @@ a {
 .l_post{
 	/* 帖子之间的分割线 */
   border-top: 1px solid #eee;
+	/* border-radius:3px; */
+	/* margin:3px; */
+	/* background:#f8f8f8; */
 }
 .core_reply_content {
   /* border: 1px solid #f4f4f4; */
