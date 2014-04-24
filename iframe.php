@@ -18,15 +18,15 @@
   border-bottom-width: 2px;
 	border-left-color: rgb(200, 200, 200);
   border-left-style: solid;
-  border-left-width: 2px;
+  border-left-width: 1px;
 	border-right-color: rgb(200, 200, 200);
   border-right-style: solid;
-  border-right-width: 2px;
+  border-right-width:1px;
 	border-top-color: rgb(200, 200, 200);
 	// border-top-left-radius: 26.65625px;
 	// border-top-right-radius: 26.65625px;
   border-top-style: solid;
-  border-top-width: 2px;
+  border-top-width: 0px;
   box-shadow: rgb(192, 192, 192) 10px 10px 10px 0px;
   // color: rgb(0, 0, 0);
   display: block;
