@@ -11,24 +11,24 @@
   background-image: none;
   background-origin: padding-box;
   background-size: auto;
-	border-bottom-color: rgb(200, 200, 200);
-	// border-bottom-left-radius: 26.65625px;
-	// border-bottom-right-radius: 26.65625px;
+  border-bottom-color: rgb(200, 200, 200);
+  <!-- border-bottom-left-radius: 26.65625px; -->
+  <!-- border-bottom-right-radius: 26.65625px; -->
   border-bottom-style: solid;
   border-bottom-width: 2px;
-	border-left-color: rgb(200, 200, 200);
+  border-left-color: rgb(200, 200, 200);
   border-left-style: solid;
   border-left-width: 1px;
-	border-right-color: rgb(200, 200, 200);
+  border-right-color: rgb(200, 200, 200);
   border-right-style: solid;
   border-right-width:1px;
-	border-top-color: rgb(200, 200, 200);
-	// border-top-left-radius: 26.65625px;
-	// border-top-right-radius: 26.65625px;
-  border-top-style: solid;
-  border-top-width: 0px;
+  border-top-color: #eee;
+  border-top-width: 1px;
+  border-top-style:solid;
+  <!-- border-top-left-radius: 26.65625px; -->
+  <!-- border-top-right-radius: 26.65625px; -->
   box-shadow: rgb(192, 192, 192) 10px 10px 10px 0px;
-  // color: rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
   display: block;
   font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Lucida Sans', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
   font-size: 14px;

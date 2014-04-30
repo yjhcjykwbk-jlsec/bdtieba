@@ -718,7 +718,8 @@ ul, ol {
   padding-top: 15px;
   margin-left: 0px;
   text-align: center;
-  background: #e8e8e8;
+  border-right:1px solid #eee;
+  /* background: #e8e8e8;  */
 }
 /*帖子所占区域，包含楼中楼*/
 .d_post_content_main {
@@ -889,6 +890,7 @@ a {
   /* border-right: 1px solid #fafafa; */
   padding: 14px 15px;
   padding: 4px 15px 14px 15px;
+  background:white;
 }
 
 .core_title_theme_2 .core_title_txt {
